@@ -1,0 +1,36 @@
+<%- layout('layout/boilerplate') %>
+<div class="row">
+  <div class="col-3 m-3 p-3 card">
+    <h2 class="text-center mb-3">Shops</h2>
+    <div class="d-flex flex-column">
+      <% for (let shop of shops) { %>
+        <% if (title === shop.title) { %><a href="/shops" class="btn btn-outline-primary mb-3 active"><%=shop.title%></a>
+        <% } else { %><a href="/shops?title=<%=shop.title%>" class="btn btn-outline-secondary mb-3"><%=shop.title%></a>
+        <% } %>
+      <% } %>
+    </div>
+  </div>
+  <div class="col m-3 container-fluid overflow-auto" id="product-list">
+      <div class="row row-cols-1 row-cols-md-2">
+        <% for (let product of products) { %>
+          <div class="col">
+            <div class="card mb-3">
+              <img src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?fit=crop&w=640&q=80"
+              class="card-img-top" alt="Image of burger">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <%=product.title%>
+                  <span class="badge text-bg-primary fw-normal">$<%=product.price%></span>
+                </h5>
+                <form class="add-to-cart">
+                  <input type="hidden" name="productId" value="<%=product._id%>">
+                  <button class="btn btn-success">add to Cart</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        <% } %>
+      </div>
+  </div>
+</div>
+<script src="/javascripts/addToCart.js"></script>
