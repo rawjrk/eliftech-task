@@ -1,0 +1,7 @@
+#product-list {
+  height: calc(100vh - 56px - 64px);
+}
+
+#product-list-cart {
+  height: calc(100vh - 56px - 32px - 48px - 16px - 64px - 32px);
+}
