@@ -26,6 +26,10 @@
       "env": {
         "browser": true,
         "node": false
+      },
+      "parserOptions": {
+        "sourceType": "module",
+        "allowImportExportEverywhere": true
       }
     }
   ]

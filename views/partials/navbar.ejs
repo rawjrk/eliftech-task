@@ -6,13 +6,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link <%= isShopPage ? 'active' : '' %>" href="/shops">
-          Shops
-        </a>
-        <a class="nav-link <%= isCartPage ? 'active' : '' %>" href="/shopping-cart">
-          Shopping Cart
-          <span class="badge text-bg-<%= orderSize > 0 ? 'danger' : 'secondary' %>" id="order-badge"><%=orderSize%></span>
-        </a>
+        <a class="nav-link <%= isShopPage ? 'active' : '' %>" href="/shops">Shops</a>
+        <a class="nav-link <%= isCartPage ? 'active' : '' %>" href="/shopping-cart">Shopping Cart</a>
       </div>
     </div>
   </div>

@@ -2,10 +2,10 @@
 <div class="row">
   <div class="col-3 m-3 p-3 card">
     <h2 class="text-center mb-3">Shops</h2>
-    <div class="d-flex flex-column">
+    <div class="d-flex flex-column" id="shops-nav">
       <% for (let shop of shops) { %>
-        <% if (title === shop.title) { %><a href="/shops" class="btn btn-outline-primary mb-3 active"><%=shop.title%></a>
-        <% } else { %><a href="/shops?title=<%=shop.title%>" class="btn btn-outline-secondary mb-3"><%=shop.title%></a>
+        <% if (title === shop.title) { %><a href="/shops" class="btn btn-outline-primary mb-3 active" id="shop-link-<%=shop._id%>"><%=shop.title%></a>
+        <% } else { %><a href="/shops?title=<%=shop.title%>" class="btn btn-outline-secondary mb-3" id="shop-link-<%=shop._id%>"><%=shop.title%></a>
         <% } %>
       <% } %>
     </div>
@@ -23,7 +23,10 @@
                   <span class="badge text-bg-primary fw-normal">$<%=product.price%></span>
                 </h5>
                 <form class="add-to-cart">
-                  <input type="hidden" name="productId" value="<%=product._id%>">
+                  <input type="hidden" name="_id" value="<%=product._id%>">
+                  <input type="hidden" name="title" value="<%=product.title%>">
+                  <input type="hidden" name="price" value="<%=product.price%>">
+                  <input type="hidden" name="shop" value="<%=product.shop%>">
                   <button class="btn btn-success">add to Cart</button>
                 </form>
               </div>
@@ -33,4 +36,3 @@
       </div>
   </div>
 </div>
-<script src="/javascripts/addToCart.js"></script>
