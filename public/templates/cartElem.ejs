@@ -1,0 +1,31 @@
+<div class="col">
+  <div class="col card mb-3" id="cart-elem-<%=product._id%>">
+    <div class="row g-0">
+      <div class="col-md-5">
+        <img src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?fit=crop&w=640&q=80"
+        class="img-fluid rounded-start" alt="Image of burger">
+      </div>
+      <div class="col-md-7">
+        <div class="card-body text-center">
+          <h5 class="card-title mb-3"><%=product.title%></h5>
+          <p class="mb-3 me-3 fs-5">Price: $<%=product.price%></p>
+          <div class="d-flex flex-row align-items-center justify-content-center" role="group" aria-label="Change quantity controls">
+            <input style="width: 8rem;" class="form-control text-center me-3" type="number" name="quantity" id="quantity-display-<%=product._id%>" value="<%=product.quantity%>" disabled>
+            <div class="btn-group quantity-change" role="group" aria-label="Quantity change controls">
+              <button type="button" class="btn btn-danger btn-sm" id="quantity-minus-<%=product._id%>">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"/>
+                </svg>
+              </button>
+              <button type="button" class="btn btn-primary btn-sm" id="quantity-plus-<%=product._id%>">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,4 @@
 const { catchAsync } = require('../utils');
-const { totalPrice } = require('../utils/order');
 const Shop = require('../models/shops');
 const Product = require('../models/products');
 
@@ -16,10 +15,6 @@ module.exports.index = catchAsync(async (req, res) => {
   res.render('shops/index', { shops, products, title: 'all' });
 });
 
-module.exports.cart = catchAsync(async (req, res) => {
-  const { order } = req.session;
-  for (const product of order) {
-    product.details = await Product.findById(product.productId);
-  }
-  res.render('shops/cart', { order, totalPrice });
-});
+module.exports.cart = (req, res) => {
+  res.render('shops/cart');
+};

@@ -36,51 +36,7 @@
   </div>
 
   <div class="col container-fluid overflow-auto" id="product-list-cart">
-    <div class="row row-cols-1">
-      <% if (order.length < 1) { %>
-        <div class="col p-3">
-          <h2 class="text-center">Choose Products on the <a href="/shops">Shops Page</a></h2>
-        </div>
-      <% } %>
-
-      <% for (let product of order) { %>
-        <div class="col">
-
-          <div class="col card mb-3" id="product-card-<%=product.productId%>">
-            <div class="row g-0">
-              <div class="col-md-5">
-                <img src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?fit=crop&w=640&q=80"
-                class="img-fluid rounded-start" alt="Image of burger">
-              </div>
-              <div class="col-md-7">
-                <div class="card-body text-center">
-                  <h5 class="card-title mb-3"><%=product.details.title%></h5>
-
-                  <p class="mb-3 me-3 fs-5">Price: $<%=product.details.price%></p>
-                
-                  <div class="d-flex flex-row align-items-center justify-content-center" role="group" aria-label="Change quantity controls">
-                    <input style="width: 8rem;" class="form-control text-center me-3" type="number" name="quantity" id="quantity-display-<%=product.productId%>" value="<%=product.quantity%>" disabled>
-                    <div class="btn-group quantity-change" role="group" aria-label="Quantity change controls">
-                      <button type="button" class="btn btn-danger btn-sm" id="quantity-minus-<%=product.productId%>">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"/>
-                        </svg>
-                      </button>
-                      <button type="button" class="btn btn-primary btn-sm" id="quantity-plus-<%=product.productId%>">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      <% } %>
+    <div class="row row-cols-1" id="shopping-cart">
     </div>
   </div>
 </div>
@@ -89,10 +45,9 @@
   <div class="col d-flex flex-row align-items-center justify-content-end">
     <div class="fs-5 mx-3">
       <strong>Total Price:</strong>
-      $<span id="total-price"><%=totalPrice(order)%></span>
+      $<span id="total-price">0</span>
     </div>
-    <button class="btn btn-success btn-lg" id="submit-order">Submit</button>
+    <button type="button" class="btn btn-success btn-lg" id="submit-order">Submit</button>
   </div>
   
 </div>
-<script src="/javascripts/shoppingCart.js"></script>
